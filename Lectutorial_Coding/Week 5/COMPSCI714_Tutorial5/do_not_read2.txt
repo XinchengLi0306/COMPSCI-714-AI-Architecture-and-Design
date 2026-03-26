@@ -1,0 +1,8 @@
+The network is composed of 11 layers (10 hidden layers and 1 output layer):
+- It starts with a Convolution layer containing 64 filters with kernel size changed to 7, followed by a Max Pooling layer with default settings (kernel size of 2, no striding). A Max Pooling with kernel size 2 reduces the spatial dimensions of the image by a factor 2. 
+- It then repeats two times a pattern of 2 Convolution layers (128 filters, and then 256 filters), followed by 1 Max Pooling layer. This pattern could be repeated more times for larger images. This could be a hyperparameter to tune. 
+- It then stacks two fully connected (dense) layers, followed by the output softmax layer with 10 output neurons, to predict the 10 classes of the dataset. The values are first flattened before being fed to the first fully connected layer. 
+
+Notes:
+- The number of filters in the Convolution layers is doubled after each Pooling layer. This is common practice as the Pooling layers usually are set to reduce each spatial dimension by a factor 2. Therefore, we can afford to double the number of feature maps in the next layer without adding too much computational load. This also makes sense as the number of possible higher level features (deeper in the network) is higher than the number of possible lower level features (closer to the inputs). I.e., there are many ways to combine lower level features into higher level ones. 
+- A dropout rate of 50% is applied to the two fully connected layers before the output layer, to help reduce overfitting.

@@ -1,0 +1,4 @@
+TensorShape = [2, 70, 120, 3]
+- Number of images: 2
+- Dimensions of the images (height and width): 70x120
+- Number of channels: 3 (i.e., RGB)

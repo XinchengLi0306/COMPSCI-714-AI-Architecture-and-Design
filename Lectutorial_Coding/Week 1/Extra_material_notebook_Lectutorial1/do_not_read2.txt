@@ -1,0 +1,5 @@
+- The correlation is quite strong visually, with a clear upward trend and points not too dispersed. 
+
+- You can identify the median house value cap with an strong horizontal line at $500 000.
+
+- You can also see less visible horizontal lines around $450 000, $350 000, and maybe $280 000, $260 000, etc. These might be linked to some irregularities in the data collection or recording. There may be a risk for your algorithm to pick these misleading trends up, which might be detrimental to your model performance. Therefore, you may want to remove the corresponding data points.
